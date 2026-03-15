@@ -1,0 +1,49 @@
+{% load wagtailcore_tags %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Our People - Bakery Demo</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; background: #fdf6ec; }
+        nav { background: #2c1810; padding: 15px 40px; display: flex; gap: 30px; }
+        nav a { color: #f5c842; text-decoration: none; font-weight: bold; font-size: 16px; }
+        .hero { background: #2c1810; color: white; padding: 60px 40px; }
+        .hero h1 { font-size: 40px; margin-bottom: 10px; }
+        .hero p { color: #f5c842; font-size: 18px; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 60px 20px; }
+        .people-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .person-card { background: white; border-radius: 8px; padding: 30px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); text-align: center; }
+        .avatar { width: 80px; height: 80px; border-radius: 50%; background: #2c1810; color: #f5c842; font-size: 32px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; }
+        .person-card h2 { color: #2c1810; font-size: 20px; margin-bottom: 8px; }
+        .person-card .role { color: #c0392b; font-weight: bold; margin-bottom: 15px; }
+        .person-card a { color: #2c1810; text-decoration: none; border: 2px solid #2c1810; padding: 8px 20px; border-radius: 4px; display: inline-block; }
+        .person-card a:hover { background: #2c1810; color: white; }
+        footer { background: #2c1810; color: #ccc; text-align: center; padding: 30px; margin-top: 60px; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/">Bakery Demo</a>
+        <a href="/our-people/">Our People</a>
+    </nav>
+    <div class="hero">
+        <h1>{{ page.title }}</h1>
+        <p>{{ page.introduction }}</p>
+    </div>
+    <div class="container">
+        <div class="people-grid">
+            {% for person in people %}
+            <div class="person-card">
+                <div class="avatar">{{ person.first_name|first }}</div>
+                <h2>{{ person.first_name }} {{ person.last_name }}</h2>
+                <p class="role">{{ person.role }}</p>
+                <a href="{% pageurl person %}">View Profile</a>
+            </div>
+            {% empty %}
+            <p>No people added yet.</p>
+            {% endfor %}
+        </div>
+    </div>
+    <footer>Built with Wagtail CMS — GSoC 2026 Demo by Shivangini Gupta</footer>
+</body>
+</html>

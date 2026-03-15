@@ -1,0 +1,35 @@
+{% load wagtailcore_tags %}
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>{{ page.first_name }} {{ page.last_name }} - Bakery Demo</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; background: #fdf6ec; }
+        nav { background: #2c1810; padding: 15px 40px; display: flex; gap: 30px; }
+        nav a { color: #f5c842; text-decoration: none; font-weight: bold; font-size: 16px; }
+        .profile { max-width: 800px; margin: 60px auto; background: white; border-radius: 8px; padding: 60px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .avatar { width: 120px; height: 120px; border-radius: 50%; background: #2c1810; color: #f5c842; font-size: 48px; display: flex; align-items: center; justify-content: center; margin-bottom: 30px; }
+        h1 { color: #2c1810; font-size: 36px; margin-bottom: 8px; }
+        .role { color: #c0392b; font-size: 20px; font-weight: bold; margin-bottom: 30px; }
+        .bio { color: #444; line-height: 1.8; font-size: 16px; }
+        .back { display: inline-block; margin-top: 40px; color: #2c1810; text-decoration: none; font-weight: bold; }
+        .back:hover { text-decoration: underline; }
+        footer { background: #2c1810; color: #ccc; text-align: center; padding: 30px; margin-top: 60px; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/">Bakery Demo</a>
+       <a href="/our-people/">Our People</a>
+    </nav>
+    <div class="profile">
+        <div class="avatar">{{ page.first_name|first }}</div>
+        <h1>{{ page.first_name }} {{ page.last_name }}</h1>
+        <p class="role">{{ page.role }}</p>
+        <div class="bio">{{ page.biography|richtext }}</div>
+        <a class="back" href="/people/">← Back to People</a>
+    </div>
+    <footer>Built with Wagtail CMS — GSoC 2026 Demo by Shivangini Gupta</footer>
+</body>
+</html>

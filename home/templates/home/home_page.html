@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bakery Demo</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #fdf6ec; }
+        nav { background: #2c1810; padding: 15px 40px; display: flex; gap: 30px; }
+        nav a { color: #f5c842; text-decoration: none; font-weight: bold; font-size: 16px; }
+        nav a:hover { color: white; }
+        .hero { background: #2c1810; color: white; padding: 80px 40px; text-align: center; }
+        .hero h1 { font-size: 48px; margin-bottom: 20px; }
+        .hero p { font-size: 20px; color: #f5c842; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 60px 20px; }
+        .section-title { font-size: 32px; color: #2c1810; margin-bottom: 40px; }
+        .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .card { background: white; border-radius: 8px; padding: 30px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .card h3 { color: #2c1810; }
+        .card a { color: #c0392b; text-decoration: none; font-weight: bold; }
+        footer { background: #2c1810; color: #ccc; text-align: center; padding: 30px; margin-top: 60px; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/">Bakery Demo</a>
+       <a href="/our-people/">Our People</a>
+    </nav>
+    <div class="hero">
+        <h1>Welcome to Bakery Demo</h1>
+        <p>A demonstration of Wagtail CMS capabilities</p>
+    </div>
+    <div class="container">
+        <h2 class="section-title">What This Demo Shows</h2>
+        <div class="cards">
+            <div class="card">
+                <h3>👥 People Section</h3>
+                <p>PersonIndexPage and PersonPage models demonstrating staff/team pages — my GSoC 2026 deliverable.</p>
+                <a href="/our-people/">View People →</a>
+            </div>
+            <div class="card">
+                <h3>🔍 Search</h3>
+                <p>Full text search across all content types demonstrating Wagtail search.</p>
+                <a href="/search/">Try Search →</a>
+            </div>
+        </div>
+    </div>
+    <footer>Built with Wagtail CMS — GSoC 2026 Demo by Shivangini Gupta</footer>
+</body>
+</html>
